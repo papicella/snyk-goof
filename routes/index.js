@@ -33,11 +33,6 @@ exports.index = function (req, res, next) {
     });
 };
 
-function sanitizeRequest(req) {
-  // Locally trusted sanitization code here...
-      return req;
-}
-
 exports.admin = function (req, res, next) {
   console.log(req.body);
   const sanitizedReq = sanitizeRequest(req.body);
