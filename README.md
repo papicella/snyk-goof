@@ -5,6 +5,8 @@ A vulnerable Node.js demo application, based on the [Dreamers Lab tutorial](http
 
 Some arbitrary change
 
+Another one
+
 ## Features
 
 This vulnerable app includes the following capabilities to experiment with:
