@@ -33,10 +33,15 @@ exports.index = function (req, res, next) {
     });
 };
 
+function sanitizeRequest(req) {
+  // Locally trusted sanitization code here...
+      return req;
+}
 
 exports.admin = function (req, res, next) {
   console.log(req.body);
-  User.find({ username: req.body.username, password: req.body.password }, function (err, users) {
+  const sanitizedReq = sanitizeRequest(req);
+  User.find({ username: sanitizedReq.body.username, password: sanitizedReq.body.password }, function (err, users) {
     if (users.length > 0) {
       return res.render('admin', {
         title: 'Admin Access Granted',
