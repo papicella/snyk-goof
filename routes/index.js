@@ -40,8 +40,8 @@ function sanitizeRequest(req) {
 
 exports.admin = function (req, res, next) {
   console.log(req.body);
-  const sanitizedReq = sanitizeRequest(req);
-  User.find({ username: sanitizedReq.body.username, password: sanitizedReq.body.password }, function (err, users) {
+  const sanitizedReq = sanitizeRequest(req.body);
+  User.find({ username: sanitizedReq.username, password: sanitizedReq.password }, function (err, users) {
     if (users.length > 0) {
       return res.render('admin', {
         title: 'Admin Access Granted',
