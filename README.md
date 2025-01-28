@@ -7,6 +7,8 @@ Some arbitrary change
 
 Another one
 
+Additional change
+
 ## Features
 
 This vulnerable app includes the following capabilities to experiment with:
